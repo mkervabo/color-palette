@@ -1,4 +1,5 @@
 import './App.css'
+import { Outlet, Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -7,9 +8,9 @@ function Header() {
 				Logo
 			</div>
       <div className="Menu">
-				<div>Home</div>
-				<div>Palette Generator</div>
-				<div>My Palettes</div>
+				<Link to={``}>Home</Link>
+				<Link to={`hello`}>Palette Generator</Link>
+				<Link to={`hello`}>My Palettes</Link>
 			</div>
     </header>
   )
