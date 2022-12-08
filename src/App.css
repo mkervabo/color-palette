@@ -1,4 +1,4 @@
-body {
+.App {
   width: 100vw;
   background-color: #FFF;
   color: #000;
@@ -17,7 +17,7 @@ header {
 }
 
 .Home {
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   padding: 30px;
 }
@@ -25,6 +25,31 @@ header {
 .Menu {
   display: flex;
   gap: 40px;
+}
+
+.Palette {
+  height: 200px;
+  width: 300px;
+  border: solid #000 3px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.Palette > .colors {
+  display: flex;
+  height: 100%;
+}
+
+.Palette > .colors > div {
+ height: 100%;
+ width: 100%;
+}
+
+.Palette > .name {
+  border-top: solid #000 3px;
+  padding: 0 10px;
 }
 
 .new-palette {
@@ -48,8 +73,12 @@ header {
   align-items: center;
 }
 
+.home-palette {
+  width: 100%;
+}
 .home-palette > div {
   display: flex;
-  width: 100%;
-  overflow-x: scroll;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 30px;
 }
