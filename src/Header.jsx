@@ -9,8 +9,8 @@ function Header() {
 			</div>
       <div className="Menu">
 				<Link to={``}>Home</Link>
-				<Link to={`hello`}>Palette Generator</Link>
-				<Link to={`hello`}>My Palettes</Link>
+				<Link to={`palettes`}>Palette Generator</Link>
+				<Link to={``}>My Palettes</Link>
 			</div>
     </header>
   )

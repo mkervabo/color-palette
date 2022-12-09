@@ -1,14 +1,14 @@
 .App {
   width: 100vw;
+  height: 100vh;
   background-color: #FFF;
   color: #000;
-  display: flex;
-  flex-wrap: wrap;
+  overflow: hidden;
 }
 
 header {
   height: 80px;
-  width: 100vw;
+  max-width: 100%;
   border-bottom: solid black;
   padding: 0 30px;
   display: flex;
@@ -17,8 +17,7 @@ header {
 }
 
 .Home {
-  width: 100vw;
-  min-height: 100vh;
+  max-width: 100%;
   padding: 30px;
 }
 
@@ -50,6 +49,55 @@ header {
 .Palette > .name {
   border-top: solid #000 3px;
   padding: 0 10px;
+}
+
+.Generator {
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+}
+
+.Generator > .Colors {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.Generator > .Colors > .Color {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.Generator > .Colors > .Color > div {
+  padding: 15px 15px;
+  margin-bottom: 200px;
+  color: #FFF;
+  text-transform: uppercase;
+  background-color: rgba( 0, 0, 0, 20%);
+}
+
+
+.NewColor{
+  width: 100px;
+  height: 100%;
+  background-color: #343434;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NewColor > div {
+  background-color: #484848;
+  border-radius: 2px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
 }
 
 .new-palette {
