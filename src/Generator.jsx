@@ -21,12 +21,23 @@ function Generator() {
 	const navigate = useNavigate()
 	const params = useParams()
 	const [colors, setColors] = useState(getColors(params))
+	
 	const addNewColor = () => {
 		const color = randomHex.generate()
 		randomHex.generate()
 		const newRoute = "/palettes/" + params.colors + '-' + color.slice(1)
 		navigate(newRoute)
 		setColors([...colors, color])
+	}
+
+	const addToFavorite = () => {
+		let favorites  = window.localStorage.getItem('favorites')
+		if (favorites != null) {
+			favorites = [...JSON.parse(favorites), { name: 'palette name', palette: colors}]
+		}
+		else 
+			favorites = [{ name: 'palette name', palette: colors}]
+		window.localStorage.setItem('favorites', JSON.stringify(favorites))
 	}
 
 	useEffect(() => {
@@ -39,6 +50,7 @@ function Generator() {
   }, [navigate, params, setColors])
   return (
     <div className="Generator">
+			<div className="Favorite" onClick={() => addToFavorite()}>Save</div>
 			<div className='Colors'>
 				{Object.entries(colors).map(([key, value]) => (
 					<div className="Color" key={key} style={{ backgroundColor: value }}>
